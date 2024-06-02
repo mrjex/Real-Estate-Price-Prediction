@@ -1,61 +1,52 @@
-# Real Estate Price Prediction 🏠
-
-> Advanced Machine Learning for Accurate Property Valuation
+# Real Estate Price Prediction
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
 [![AWS](https://img.shields.io/badge/AWS-Cloud%20Deployed-orange)](https://aws.amazon.com/)
 [![Flask](https://img.shields.io/badge/Flask-Web%20Server-lightgrey)](https://flask.palletsprojects.com/)
 [![Machine Learning](https://img.shields.io/badge/ML-Linear%20Regression-green)](https://scikit-learn.org/)
 
-## 📑 Table of Contents
+## Table of Contents
 
-- [Real Estate Price Prediction 🏠](#real-estate-price-prediction-)
-  - [📑 Table of Contents](#-table-of-contents)
-  - [🎯 Overview](#-overview)
-  - [🎬 System Demo](#-system-demo)
-  - [🏗 Cloud Architecture](#-cloud-architecture)
-  - [💻 Technical Implementation](#-technical-implementation)
+- [Real Estate Price Prediction](#real-estate-price-prediction)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Demo](#demo)
+  - [Cloud Architecture](#cloud-architecture)
+  - [Technical Implementation](#technical-implementation)
     - [Flask Backend](#flask-backend)
     - [Data Processing Pipeline](#data-processing-pipeline)
     - [Machine Learning Model](#machine-learning-model)
       - [Linear Regression Analysis](#linear-regression-analysis)
       - [Advanced Validation Techniques](#advanced-validation-techniques)
-  - [☁️ AWS Infrastructure](#️-aws-infrastructure)
+  - [AWS Infrastructure](#aws-infrastructure)
     - [Network Configuration](#network-configuration)
-  - [🚀 Getting Started](#-getting-started)
+  - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Deployment Steps](#deployment-steps)
-  - [🔗 Related Projects](#-related-projects)
 
-## 🎯 Overview
+## Overview
 
-This project leverages machine learning to predict real estate prices based on multiple property attributes including location, size, and total square footage. Developed in June 2024, it demonstrates the power of combining cloud computing with predictive analytics to create a scalable property valuation solution.
+This project predicts real estate prices based on `location`, `size`, and `total square footage`. Data is processed from CSV files, and the ML model is built, trained and deployed on *AWS*
 
-The system processes real estate data from CSV files, builds and trains a machine learning model, and deploys the solution on AWS cloud infrastructure for reliable, scalable access.
-
-## 🎬 System Demo
+## Demo
 
 Watch the prediction system in action:
 
 [![Real Estate Price Prediction Demo](https://img.youtube.com/vi/TodmrVeLiXM/maxresdefault.jpg)](https://www.youtube.com/watch?v=TodmrVeLiXM)
 
-*Interactive real estate price prediction system*
 
-## 🏗 Cloud Architecture
-
-The solution utilizes a robust AWS-based architecture for scalability and reliability:
+## Cloud Architecture
 
 ![architecture-1](readme-pictures/aws-and-app/architecture-flow.PNG)
 
-*End-to-end data flow and cloud architecture*
 
-The system follows a modern cloud-native approach:
+The system follows a cloud-native approach:
 - **Data Storage**: Property datasets stored in S3 buckets
 - **Computation**: EC2 instances running the machine learning model
 - **Deployment**: Ubuntu-based cloud deployment
 - **Access Control**: IAM for secure service permissions
 
-## 💻 Technical Implementation
+## Technical Implementation
 
 ### Flask Backend
 
@@ -81,8 +72,6 @@ Data preparation is performed in Jupyter Notebook with a systematic approach:
 #### Linear Regression Analysis
 
 The price prediction utilizes linear regression, a powerful statistical approach for identifying relationships between property attributes and market values.
-
-> "Linear Regression allows us to examine datapoints in a multi-dimensional space and derive generalized insights covering all instances, creating a powerful predictive model."
 
 The implementation includes:
 - Feature selection and engineering
@@ -110,7 +99,7 @@ The system leverages scikit-learn's GridSearchCV to identify optimal model param
 
 *Performance metrics across parameter combinations*
 
-## ☁️ AWS Infrastructure
+## AWS Infrastructure
 
 The solution utilizes multiple AWS services for a production-ready deployment:
 
@@ -132,7 +121,7 @@ Proper security configuration is critical for cloud-based machine learning syste
 
 *EC2 security group configuration*
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - AWS account with EC2, S3, and IAM access
@@ -158,14 +147,3 @@ Proper security configuration is critical for cloud-based machine learning syste
 3. **Launch the Application**:
    ![aws-ubuntu-shell](readme-pictures/aws-and-app/aws-ubuntu-run-server.PNG)
    *Server startup on AWS Ubuntu instance*
-
-## 🔗 Related Projects
-
-My journey in machine learning and data analysis includes these related projects:
-- [Cyber Physical Systems of Systems](https://github.com/mrjex/Cyber-Physical-Systems-and-Sytems-of-Systems)
-- [Relational Analysis And Visualization](https://github.com/mrjex/Relational-Analysis-and-Visualization)
-- [Bookster](https://github.com/mrjex/Bookster)
-
----
-
-*Developed by Joel Mattsson using Python, Machine Learning, and AWS*
