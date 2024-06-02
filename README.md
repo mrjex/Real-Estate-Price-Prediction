@@ -11,16 +11,9 @@
 
 - [Real Estate Price Prediction](#real-estate-price-prediction)
   - [Table of Contents](#table-of-contents)
-  - [Demo](#demo)
   - [Cloud Architecture](#cloud-architecture)
   - [Getting Started](#getting-started)
-
-
-## Demo
-
-Watch the prediction system in action:
-
-[![Real Estate Price Prediction Demo](https://img.youtube.com/vi/TodmrVeLiXM/maxresdefault.jpg)](https://www.youtube.com/watch?v=TodmrVeLiXM)
+  - [Demo](#demo)
 
 
 ## Cloud Architecture
@@ -53,3 +46,10 @@ Watch the prediction system in action:
 3. **Launch the Application**:
    ![aws-ubuntu-shell](readme-pictures/aws-and-app/aws-ubuntu-run-server.PNG)
    *Server startup on AWS Ubuntu instance*
+
+
+## Demo
+
+Watch the prediction system in action:
+
+[![Real Estate Price Prediction Demo](https://img.youtube.com/vi/TodmrVeLiXM/maxresdefault.jpg)](https://www.youtube.com/watch?v=TodmrVeLiXM)
