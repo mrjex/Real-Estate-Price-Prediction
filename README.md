@@ -1,106 +1,171 @@
-# Real Estate Price Prediction
+# Real Estate Price Prediction 🏠
 
-In the June 2024, I aspired to learn as much as possible about the topic of Machine Learning and Amazon Web Services. This project takes the data from a CSV with attributes such as `location`, `size`, `total_sqft` and `price`, all representative of real-estate indicators of the price. Then, this data is used to build a machine learning model that takes several attributes indirectly indicative of the price, and predicts a price.
+> Advanced Machine Learning for Accurate Property Valuation
 
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
+[![AWS](https://img.shields.io/badge/AWS-Cloud%20Deployed-orange)](https://aws.amazon.com/)
+[![Flask](https://img.shields.io/badge/Flask-Web%20Server-lightgrey)](https://flask.palletsprojects.com/)
+[![Machine Learning](https://img.shields.io/badge/ML-Linear%20Regression-green)](https://scikit-learn.org/)
 
-**Demo:**
+## 📑 Table of Contents
+
+- [Real Estate Price Prediction 🏠](#real-estate-price-prediction-)
+  - [📑 Table of Contents](#-table-of-contents)
+  - [🎯 Overview](#-overview)
+  - [🎬 System Demo](#-system-demo)
+  - [🏗 Cloud Architecture](#-cloud-architecture)
+  - [💻 Technical Implementation](#-technical-implementation)
+    - [Flask Backend](#flask-backend)
+    - [Data Processing Pipeline](#data-processing-pipeline)
+    - [Machine Learning Model](#machine-learning-model)
+      - [Linear Regression Analysis](#linear-regression-analysis)
+      - [Advanced Validation Techniques](#advanced-validation-techniques)
+  - [☁️ AWS Infrastructure](#️-aws-infrastructure)
+    - [Network Configuration](#network-configuration)
+  - [🚀 Getting Started](#-getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Deployment Steps](#deployment-steps)
+  - [🔗 Related Projects](#-related-projects)
+
+## 🎯 Overview
+
+This project leverages machine learning to predict real estate prices based on multiple property attributes including location, size, and total square footage. Developed in June 2024, it demonstrates the power of combining cloud computing with predictive analytics to create a scalable property valuation solution.
+
+The system processes real estate data from CSV files, builds and trains a machine learning model, and deploys the solution on AWS cloud infrastructure for reliable, scalable access.
+
+## 🎬 System Demo
+
+Watch the prediction system in action:
 
 ![Demo](demo.mp4)
 
+*Interactive real estate price prediction system*
 
-## Architecture
+## 🏗 Cloud Architecture
+
+The solution utilizes a robust AWS-based architecture for scalability and reliability:
 
 ![architecture-1](readme-pictures/aws-and-app/architecture-flow.PNG)
 
-Since the project revolves around the services provided my Amazon (AWS), the input dataset needs to be uploaded to your S3 bucket, which then is retrieved by the EC2-instances. The EC2 service also has the responsibility of running the nodes that your application is relying for successful execution. In other words, they are hosting the project on the cloud.
+*End-to-end data flow and cloud architecture*
 
-I also experimented with the cloud shell in the AWS management console, as well as the shells specific to the EC2 instances. I selected Ubuntu as the operating system since I was familiar with it due to my prior team-management project [Cyber Physical Systems of Systems](https://gitlab.com/jex-projects/mrjex/-/tree/main/projects/1.%20courses/year-2/7.%20Cyber%20Physical%20Systems%20and%20Sytems%20of%20Systems?ref_type=heads)
+The system follows a modern cloud-native approach:
+- **Data Storage**: Property datasets stored in S3 buckets
+- **Computation**: EC2 instances running the machine learning model
+- **Deployment**: Ubuntu-based cloud deployment
+- **Access Control**: IAM for secure service permissions
 
+## 💻 Technical Implementation
 
-### Flask
+### Flask Backend
 
-I used a Python Flask server as the backend component that responds on requests of the client. I had some previous experience with Flask from my [Software Quality & Testing](https://gitlab.com/jex-projects/mrjex/-/tree/main/projects/1.%20courses/year-2/6.%20Software%20Quality%20%26%20Testing?ref_type=heads) course, where we worked with a small database and limited operations in a Flask layer. In addition, I noticed a similarity with the Flask server I implemented in this project and a server I created in an earlier course called [Web Development](https://gitlab.com/jex-projects/mrjex/-/tree/main/projects/1.%20courses/year-2/1.%20Web%20Development/bookster-project?ref_type=heads). Both servers serve as the backend component with a stateless HTTP and URL structure, making them RESTful APIs.
+The project uses a Python Flask server as the RESTful API backend, handling client requests and serving predictions. This implementation builds on experience from previous projects, creating a stateless HTTP service that efficiently processes pricing queries.
 
+**Key Features:**
+- RESTful API design
+- Stateless architecture
+- Efficient HTTP response handling
+- JSON-based data exchange
 
-### Jupyter Notebook
+### Data Processing Pipeline
 
-In the `.ipynb` file I created a new data frame for each step in the data processing pipeline and used Standard Deviation and deleted the outmost deviations to remove the outliers for a more accurate Linear Regression analysis.
+Data preparation is performed in Jupyter Notebook with a systematic approach:
 
+1. **Data Cleaning**: Handling missing values and inconsistent entries
+2. **Outlier Removal**: Statistical filtering using standard deviation
+3. **Feature Engineering**: Creating relevant indicators for price prediction
+4. **Data Transformation**: Preparing numerical and categorical features for modeling
 
+### Machine Learning Model
 
-### Linear Regression
+#### Linear Regression Analysis
 
-Linear Regression is a vital concept in statistics and predictive analysis. Being able to examine datapoints in a two-dimensional axis and bring forth a generality covering all instances is a powerful concept. By virtue of the interpretation of data and suggesting actionable measures that are accurate and beneficial, one must look at data through the lens of generalities. Being able to see data for what it is, and viewing it from a bigger picture, understanding that the impact of outliers and the prowess of the apparent trend that Linear Regression presents to its users creates opportunities for growth in every concievable are that are measurable within two axis, X and Y.
+The price prediction utilizes linear regression, a powerful statistical approach for identifying relationships between property attributes and market values.
 
-Before I started this project, I had experience with this profound concept in these projects:
+> "Linear Regression allows us to examine datapoints in a multi-dimensional space and derive generalized insights covering all instances, creating a powerful predictive model."
 
-- [Cyber Physical Systems of Systems](https://gitlab.com/jex-projects/mrjex/-/tree/main/projects/1.%20courses/year-2/7.%20Cyber%20Physical%20Systems%20and%20Sytems%20of%20Systems?ref_type=heads)
+The implementation includes:
+- Feature selection and engineering
+- Model training and validation
+- Prediction optimization
 
-- [Relational-Analysis-And-Visualization](https://gitlab.com/jex-projects/mrjex/-/tree/main/projects/2.%20spare-time/2.%20Relational-Analysis-And-Visualization?ref_type=heads)
+#### Advanced Validation Techniques
 
+**K-Fold Cross Validation**
 
+The model achieves impressive accuracy through rigorous validation:
+- 5-fold validation approach
+- Consistent >80% accuracy across all folds
+- Robust performance metrics
 
-#### K Fold cross validation
+**GridSearchCV Optimization**
 
-Measures the accuracy of Linear Regression. In this project when I applied it on the Linear Regression, I used 5 splits and got > 80% on all of them.
-
-
-#### GridSearchCV
-
-API from SKLEARN that runs your model on different regressors and parameters. It finds the best model or algorithm with the optimal parameter configuration:
-
+The system leverages scikit-learn's GridSearchCV to identify optimal model parameters:
 
 ![Grid-Search-1](readme-pictures/ml-model/5.%20GridSearchCV.PNG)
 
+*Parameter grid exploration*
+
 ![Grid-Search-1](readme-pictures/ml-model/6.%20GridSearchCV.PNG)
 
+*Performance metrics across parameter combinations*
 
+## ☁️ AWS Infrastructure
 
-## Amazon Web Services
-
-One of my main objectives when I started this project was to get practical AWS experience. Below are a few of my takeaways from this project:
-
+The solution utilizes multiple AWS services for a production-ready deployment:
 
 ![used-aws-services](readme-pictures/aws-and-app/aws-serviced-used.PNG)
 
+*AWS services powering the prediction system*
 
-**EC2:** A virtual Machine in a cloud that performs cloud computations
+| Service | Purpose | Implementation Details |
+|---------|---------|------------------------|
+| **EC2** | Cloud computing | Virtual machines hosting the prediction model |
+| **S3** | Cloud storage | Secure storage for datasets and model artifacts |
+| **IAM** | Security | Permission management for service access |
 
-**S3:** Store artifacts in the cloud that can be accessed by other services during runtime
+### Network Configuration
 
-**IAM:** Using and modifying permissions to specific services
-
-**General:** Many services in general are dependent on the Inbound/Outbound rules. Manually altering HTTPS, HTTP and SSH ports is imperative
-
+Proper security configuration is critical for cloud-based machine learning systems:
 
 ![inbound-outbound-rules](readme-pictures/aws-and-app/ec2-inbound-rules.PNG)
 
+*EC2 security group configuration*
 
-### Dependencies
+## 🚀 Getting Started
 
-The process of establishing the dependencies may be complex. Here are a few noteworthy commands that may solve your encountered issue:
+### Prerequisites
+- AWS account with EC2, S3, and IAM access
+- Python 3.8+
+- SSH client
 
-1. Connect SSH client to the Ubuntu environment in the EC2-instance:
+### Deployment Steps
 
-- *You need a `.pem` file with a private auth key*
-- *You need to input your personal path to that `.pem` file*
-- *You need to alter the public ip-address to yours*
-- *You need to alter the AWS region to yours*
+1. **Connect to EC2 Instance**:
+   ```bash
+   ssh -i "path/to/your-key.pem" ubuntu@your-ec2-instance.compute.amazonaws.com
+   ```
 
-`ssh -i "C:\Users\joel0\.ssh\banglore_home_prices_key.pem" ubuntu@ec2-16-171-159-173.eu-north-1.compute.amazonaws.com`
+2. **Install Dependencies**:
+   ```bash
+   sudo pip3 install -r requirements.txt --break-system-packages
+   sudo apt install -y python3-numpy
+   sudo apt install python3-venv
+   sudo apt-get update -y
+   sudo apt-get install -y python3-flask
+   ```
 
+3. **Launch the Application**:
+   ![aws-ubuntu-shell](readme-pictures/aws-and-app/aws-ubuntu-run-server.PNG)
+   *Server startup on AWS Ubuntu instance*
 
-2. Install dependencies
+## 🔗 Related Projects
 
-```
-sudo pip3 install -r requirements.txt --break-system-packages
-sudo apt install -y python3-numpy
-sudo apt install python3-venv
-sudo apt-get update -y
-sudo apt-get install -y python3-flask
-```
+My journey in machine learning and data analysis includes these related projects:
+- [Cyber Physical Systems of Systems](https://github.com/mrjex/Cyber-Physical-Systems-and-Sytems-of-Systems)
+- [Relational Analysis And Visualization](https://github.com/mrjex/Relational-Analysis-and-Visualization)
+- [Bookster](https://github.com/mrjex/Bookster)
 
-3. Run AWS Ubuntu Shell
+---
 
-
-![aws-ubuntu-shell](readme-pictures/aws-and-app/aws-ubuntu-run-server.PNG)
+*Developed by Joel Mattsson using Python, Machine Learning, and AWS*
