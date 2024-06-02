@@ -37,7 +37,7 @@ The system processes real estate data from CSV files, builds and trains a machin
 
 Watch the prediction system in action:
 
-![Demo](demo.mp4)
+[![Real Estate Price Prediction Demo](https://img.youtube.com/vi/TodmrVeLiXM/maxresdefault.jpg)](https://www.youtube.com/watch?v=TodmrVeLiXM)
 
 *Interactive real estate price prediction system*
 
